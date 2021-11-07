@@ -12,7 +12,7 @@ $(saveBtn).on("click", function () {
     var workInput = $(this).siblings(".input").val()
 
     localStorage.setItem(time, workInput)
-    console.log(localStorage)
+
 
 })
 
@@ -28,19 +28,25 @@ $("#4pm .input").val(localStorage.getItem("4pm"))
 $("#5pm .input").val(localStorage.getItem("5pm"))
 
 function blockColor() {
-    var hour = moment().hours()
+    var timeNow = moment().hours()
 
     $(".time-block").each(function() {
         var currentHour = parseInt($(this).attr("id"))
 
-        if(currentHour > hour) {
+        if(currentHour > timeNow) {
             $(this).addClass("future")
+            $(this).removeClass("present")
+            $(this).removeClass("past")
 
-        } else if(currentHour === hour) {
+        } else if(currentHour === timeNow) {
             $(this).addClass("present")
+            $(this).removeClass("past")
+            $(this).removeClass("future")
 
         } else {
             $(this).addClass("past")
+            $(this).removeClass("present")
+            $(this).removeClass("future")
         }
         
 
@@ -48,4 +54,3 @@ function blockColor() {
 }
 
 blockColor()
-console.log(blockColor)
