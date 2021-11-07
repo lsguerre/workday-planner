@@ -6,7 +6,7 @@ body {
 
 textarea{
   background: transparent;
-  border: none;
+  border: 1px solid black;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
@@ -15,10 +15,10 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: rgb(128, 195, 233);
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 5px solid black;
 }
 
 .description{
